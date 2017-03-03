@@ -7,11 +7,11 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.List;
 
-public class Integrator {
+public final class Integrator {
 
     private JPanel mainPanel;
-    private JComboBox cbMethod;
-    private JComboBox cbFunction;
+    private JComboBox<ViewModel.Method> cbMethod;
+    private JComboBox<ViewModel.Function> cbFunction;
     private JTextField textFieldA;
     private JTextField textFieldB;
     private JTextField textFieldN;
@@ -19,10 +19,10 @@ public class Integrator {
     private JTextField textFieldResult;
     private JTextField textFieldError;
     private JLabel lbStatus;
-    private JList lstLog;
+    private JList<String> lstLog;
 
     private ViewModel viewModel;
-    private Integrator() {}
+    private Integrator() { }
 
     private Integrator(final ViewModel viewModel) {
         this.viewModel = viewModel;
@@ -70,7 +70,7 @@ public class Integrator {
         textFieldN.addFocusListener(focusLostListener);
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         JFrame frame = new JFrame("Integrator");
 
         TxtLogger logger = new TxtLogger("./Integrator.log");
@@ -105,7 +105,6 @@ public class Integrator {
         textFieldResult.setText(viewModel.getResult());
         textFieldError.setText(viewModel.getError());
         lbStatus.setText(viewModel.getStatus());
-
 
         List<String> log = viewModel.getLog();
         String[] items = log.toArray(new String[log.size()]);
