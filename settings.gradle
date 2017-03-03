@@ -56,6 +56,15 @@ include "code/BinaryTree/Infrastructure"
 project(":code/BinaryTree/Infrastructure").name = "BinaryTree-Infrastructure"
 
 // Бабинцева Анна
+include "code/Integrator/Model"
+project(":code/Integrator/Model").name = "Integrator-Model"
+include "code/Integrator/ViewModel"
+project(":code/Integrator/ViewModel").name = "Integrator-ViewModel"
+include "code/Integrator/View"
+project(":code/Integrator/View").name = "Integrator-View"
+include "code/Integrator/Infrastructure"
+project(":code/Integrator/Infrastructure").name = "Integrator-Infrastructure"
+
 // Быкадоров Роман
 
 // Волков Денис
